@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>CDAN-004</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+<style>
+	span {
+		display: inline-block;
+		width: 200px;
+		text-align: left;
+	}
+</style>
+</head>
+<body>
+	<div class="form-groupe flex-content">
+		<h2>Enregistrement avec succés!</h2>
+		<span>Nom complet:</span><span th:text="${user.name}"></span><br/>
+		<span>E-mail:</span><span th:text="${user.email}"></span><br/>
+		<span>Mot de Passe:</span><span th:text="${user.password}"></span><br/>
+		<span>Genre:</span><span th:text="${user.gender}"></span><br/>
+		<span>Profession:</span><span th:text="${user.profession}"></span><br/>
+		<span>Situation Matrimonial?</span><span th:text="${user.married}"></span><br/>
+		<span>Salaire annuel:</span><span th:text="${user.income}"></span><br/>
+		<span>Note:</span><span th:text="${user.note}"></span><br/>
+	</div>
+</body>
+</html>

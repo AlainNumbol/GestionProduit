@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CDAN-004</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <h1>Inscription Utilisateur</h1>
+        <form th:action="@{/mail/send}" method="Post" th:object="${mail}">
+            <div>
+                <label>To :</label>
+                <input type="text" th:field="*{mailadresse}" class="form-control"  />
+            </div>
+            <div>
+                <label>Objet :</label>
+                <input type="text" th:field="*{subject}" class="form-control"  />
+            </div>
+            <div>
+                <label>Contenue:</label>
+                <textarea rows="5" cols="25" th:field="*{contenue}" class="form-control" ></textarea>
+            </div>
+            <div>
+                <div></div>
+                <div><button type="submit" 	class="btn btn-primary">Envoyer</button></div>
+                <div></div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

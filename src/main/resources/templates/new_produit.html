@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CDAN-004</title>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="card-content">
+    <h1 >Créer un nouveau Produit </h1>
+    <br />
+    <form class="form" th:action="@{/save}" th:object="${produit}" method="POST">
+        <table class="table row" >
+            <tr class="table-header">
+                <td>Nom:</td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td>Firme:</td>
+                <td><input type="text" th:field="*{brand}" /></td>
+            </tr>
+            <tr>
+                <td>Fabriqué à:</td>
+                <td><input type="text" th:field="*{madein}" /></td>
+            </tr>
+            <tr>
+                <td>Prix:</td>
+                <td><input type="text" th:field="*{price}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Ajouter</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript" src="webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

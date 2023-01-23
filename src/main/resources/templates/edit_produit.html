@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CDAN-004</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+</head>
+<body>
+<div class="card">
+    <h1 class="card-header">Modifier Product</h1>
+    <br />
+    <form th:action="@{/save}" th:object="${produit}" class="form-group flex-column" method="POST">
+        <table class="table table-header ">
+            <tr>
+                <td>ID:</td>
+                <td> <input type="text" th:field="*{id}" class="form-control" readonly="readonly" /> </td>
+            </tr>
+            <tr>
+                <td>Nom:</td>
+                <td><input type="text" th:field="*{name}" class="form-control"  /></td>
+            </tr>
+            <tr>
+                <td>Firme:</td>
+                <td><input type="text" th:field="*{brand}" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td>Made In:</td>
+                <td><input type="text" th:field="*{madein}" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input type="text" th:field="*{price}" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" class="btn-primary" >Enregistrer</button> </td>
+                <td colspan="2"><button type="reset" class="btn-danger" >Annuler</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" src="webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

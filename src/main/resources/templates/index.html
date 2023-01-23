@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CDAN-004</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+</head>
+<body>
+<div>
+    <h1>Liste Produits</h1>
+    <a href="/new">Créer un nouveau Produit</a>
+    <br/><br/>
+    <table class="table" >
+        <thead class="table-header table-sub-heading-color">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Firme</th>
+            <th>Fabriquer In</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody class="table-info table-active table-sub-heading-color">
+        <tr th:each="product : ${listProducts}">
+            <td th:text="${product.id}">ID</td>
+            <td th:text="${product.name}">Nom</td>
+            <td th:text="${product.brand}">Firme</td>
+            <td th:text="${product.madein}">Fabriqué à</td>
+            <td th:text="${product.price}">Prix</td>
+            <td>
+                <a th:href="@{|/edit/${product.id}|}">[Modif]</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{|/delete/${product.id}|}">[Suppr]</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
